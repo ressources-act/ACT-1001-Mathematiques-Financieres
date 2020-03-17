@@ -1,0 +1,115 @@
+---
+title: "Dépannage 4"
+author: "Thierry Paré"
+output:
+  beamer_presentation:
+    theme: "CambridgeUS"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+header-includes:
+   - \usepackage{actuarialsymbol}
+   - \usepackage{amsmath}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Section 2.2 : Généralisations des annuités 
+
+Attention : dans une annuité, la période de composition de l'intérêt doit correspondre à la période de paiement!
+
+## Les annuités continues
+
+La valeur accumulée d’une annuité continue de $1 par unité de temps payable sur [t,t +h] est donnée par 
+
+$$
+\int_t^{t+h} a(x, t + h) \mathrm{dx} = \int_t^{t+h} \mathrm{e}^{\int_x^{t+h}\delta(u)\mathrm{du}}\mathrm{dx}
+$$
+
+La valeur actualiseé d’une annuité continue de $1 par unité de temps payable sur [t,t +h] est quant à elle donnée par 
+
+$$
+\int_t^{t+h} \frac{1}{a(t,  x)} \mathrm{dx} = \int_t^{t+h} \mathrm{e}^{-\int_t^{x}\delta(u)\mathrm{du}}\mathrm{dx}
+$$
+
+## Résumé des définitions et des formules vues en classe
+
+Concentrons nous d'abord sur les différentes façons d'accumuler de l'intérêt : 
+
+|         | Taux d'intérêt | Taux d'escompte |
+|---------|:--------------:|:-----------------:|
+| Simple  |    $1 + ni$    |  $(1 - nd)^{-1}$  |
+| Composé |  $(1 + i) ^n$  |    $(1 - d)^{-n}$   |
+
+La définition d'un taux d'intérêt (composé) est la suivante :
+
+$$
+i = \frac{A(t+h) - A(t)}{A(t)}
+$$
+
+---
+
+Celle d'un taux d'escompte est plutôt 
+$$
+d = \frac{A(t+h) - A(t)}{A(t+h)}
+$$
+
+La lettre *v* est très souvent utilisée : 
+
+$$
+v = \frac{1}{1 + i} = 1 - d 
+$$
+
+La relation suivante est très importante : 
+$$
+1 + i = \left(1 + \frac{i ^{(m)}}{m}\right)^m=(1-d)^{-1}=\left(1 - \frac{d ^{(k)}}{k}\right)^{-k} = e^\delta
+$$
+
+---
+
+La définition d'une force d'intérêt est 
+
+$$
+\delta(t) = \frac{A'(t)}{A(t)} =  \frac{a'(t)}{a(t)}
+$$
+
+La fonction d'accumulation en utilisant la force d'intérêt est la suivante
+
+$$
+a(t, t+h) = \mathrm{e}^{\int_t^{t+h}\delta(u)\mathrm{du}}
+$$
+
+**ATTENTION : Cette formule est seulement valide pour l'intérêt composé **
+$$
+d = 1 -v = 1 - \frac{1}{1+i}= \frac{i}{1 +i} 
+$$
+
+---
+
+Finalement, nous avons les formules pour les différentes annuités
+$$
+\ax{\angln} = \frac{1 - v^n}{i}
+$$
+
+$$
+\ax**{\angln} = \frac{1 - v^n}{d} = (1 + i) \times \ax{\angln}
+$$
+
+$$
+\sx{\angln} = \frac{(1+i)^n - 1}{i} =  (1+i)^n \times \ax{\angln} 
+$$
+
+$$
+\sx**{\angln} = \frac{(1+i)^n - 1}{d} = (1+i) \times \sx{\angln} = (1+i)^n \times  \ax**{\angln} 
+$$
+
+---
+
+Vous pouvez consulter les pages précédentes pour connaître les différentes formules à employer pour traiter les annuités continues. 
+
+Finalement, la dernière formule est celle de la série géométrique : 
+
+$$
+\sum_{k=0}^n v^k = \frac{1 - v^{n+1}}{1-v}
+$$

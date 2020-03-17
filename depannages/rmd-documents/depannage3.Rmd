@@ -1,0 +1,35 @@
+---
+title: "Dépannage 3"
+author: "Thierry Paré"
+output:
+  beamer_presentation:
+    theme: "CambridgeUS"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+header-includes:
+   - \usepackage{actuarialsymbol}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Section 2.1 : Valeur accumulée et valeur actualisée des annuités
+
+Nous verrons aujourd'hui les formules pour accumuler et actualiser des annuités. Nous verrons également quelques preuves.
+
+$$
+\ax{x:\angln} = \frac{1 - v^n}{i}
+$$
+
+$$
+\ax**{x:\angln} = \frac{1 - v^n}{d} = (1 + i) \times \ax{x:\angln}
+$$
+
+$$
+\sx{x:\angln} = \frac{(1+i)^n - 1}{i} =  (1+i)^n \times \ax{x:\angln} 
+$$
+
+$$
+\sx**{x:\angln} = \frac{(1+i)^n - 1}{d} = (1+i) \times \sx{x:\angln} = (1+i)^n \times  \ax**{x:\angln} 
+$$

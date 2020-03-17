@@ -1,0 +1,57 @@
+---
+title: "Dépannage 6"
+author: "Thierry Paré"
+output:
+  beamer_presentation:
+    theme: "CambridgeUS"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+header-includes:
+   - \usepackage{actuarialsymbol}
+   - \usepackage{amsmath}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Section 3.1 
+
+Le montant du prêt est égal à la somme des paiements actualisés :
+
+$$
+L = \sum_{t=1}^{n} K_j v^j
+$$
+
+| $t$ | $K_t$ |         $I_t$         |          $PR_t$         |       $OB_t$      |
+|:---:|:-----:|:---------------------:|:-----------------------:|:-----------------:|
+|  0  |       |                       |                         |      $L=OB_0$     |
+|  1  | $K_1$ |   $OB_0 \times i_1$   |   $OB_0-OB_1=K_1-I_1$   |    $OB_0-PR_1$    |
+|  n  | $K_n$ | $OB_{n-1} \times i_n$ | $OB_{n-1}-OB_n=K_n-I_n$ | $OB_{n-1}-PR_{n}$ |
+
+---
+
+Il est possible de déterminer les différentes informations d'un tableau d'amortissement sans avoir le développer. 
+
+### La formule rétrospective
+
+$OB_t = OB_0 (1+i)^t - \sum_{j=1}^t K_j(1+i)^{t-j}$
+
+### La formule prospective
+
+$OB_t = \sum_{j=1}^{n-t} K_{t+j}v^j$
+
+## Paiements égaux
+
+Nous pouvons développer des formes très intéressantes lorsque les paiements sont égaux ($K_1=K_2=...=K_n$).
+
+Nous avons :
+
+$OB_t = \sum_{j=1}^{n-t} K_{t+j}v^j = K\ax{\angl{n-t}} = \frac{K(1-v^{n-t})}{i}$
+
+$I_t = OB_{t-1} * i = K(1-v^{n-t+1})$
+
+$PR_t = K-I_t = K - K(1-v^{n-t+1}) = Kv^{n-t+1}$
+
+
+

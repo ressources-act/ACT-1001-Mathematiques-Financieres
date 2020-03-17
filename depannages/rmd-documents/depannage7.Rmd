@@ -1,0 +1,72 @@
+---
+title: "Dépannage 7"
+author: "Thierry Paré"
+output:
+  beamer_presentation:
+    theme: "CambridgeUS"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+header-includes:
+   - \usepackage{actuarialsymbol}
+   - \usepackage{amsmath}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Chapitre 4
+
+L'équation de base pour les obligations est la suivante : 
+
+### La formule de base
+
+$$P = Fr\ax{\angln j} + Cv_j^n$$
+
+* $P$ : prix d'achat
+* $F$ : valeur nominale
+* $r$ : taux de coupon
+* $n$ : nombre de périodes
+* $j$ : taux de rendement
+* $C$ : valeur de rachat
+* $Fr$ : coupon
+
+## Définitions
+
+**Obligation à prime :**
+
+$Fr > Cj$
+
+**Obligation au par :**
+
+$Fr = Cj$
+
+**Obligation à escompte :**
+
+$Fr < Cj$
+
+## Prix entre deux 2 périodes
+
+### La méthode du prix d'achat
+
+$P_{m+t} = P_m(1 +i)^t$
+
+### La méthode du prix de marché
+
+$P_{market} = P_{m+t}-tFr$
+
+## Amortissement d'une obligation
+
+L'amortissement d'une obligation est très semblable à celui d'une dette normale. 
+
+| $t$ | $K_t$ |         $I_t$         |          $PR_t$         |       $OB_t$      |
+|:---:|:-----:|:---------------------:|:-----------------------:|:-----------------:|
+|  0  |       |                       |                         |      $L=OB_0$     |
+|  1  | $K_1$ |   $OB_0 \times i_1$   |   $OB_0-OB_1=K_1-I_1$   |    $OB_0-PR_1$    |
+|  n  | $K_n$ | $OB_{n-1} \times i_n$ | $OB_{n-1}-OB_n=K_n-I_n$ | $OB_{n-1}-PR_{n}$ |
+
+ATTENTION :
+
+* $K_t = Fr$ (pour $t<n$)
+* $K_n = Fr + C$ (le dernier paiement est la valeur de rachat plus la valeur du coupon)
+

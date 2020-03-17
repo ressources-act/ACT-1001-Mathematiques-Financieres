@@ -1,0 +1,42 @@
+---
+title: "Dépannage 9"
+author: "Thierry Paré"
+output:
+  beamer_presentation:
+    theme: "CambridgeUS"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Chapitre 6
+
+Ce chapitre s'intéresse aux différentes manières d'exprimer un taux d'intérêt
+
+## Le taux forward (le taux à terme)
+
+Le taux forward est le taux réalisé au cours d'une période de temps. Nous avons la relation suivante : 
+
+$$
+[1 + f(t_1,t_2)]\times[1 + f(t_2,t_3)] = 1 + f(t_1,t_3)
+$$
+où $f(t_1, t_2)$ représente le rendement réalisé entre $t_1$ et $t_2$.
+
+## Le taux au comptant (spot rate)
+
+Le taux au comptant est le taux moyen réalisé entre deux périodes de temps. 
+
+$$
+\prod_{k=1}^n (1+f_k) = \prod_{k=1}^n (1+f(k-1, k) = (1 + S_n(n))^n
+$$
+
+## Relation intéressante
+
+Voici une relation intéressante entre le taux au comptant et le taux à terme : 
+
+$$
+f(t_n, t_{n+1}) = \frac{[1+S_0(n+1)]^{n+1}}{[1 + S_0(n)]^n} 
+$$

@@ -1,0 +1,41 @@
+---
+title: "Exercices supplémentaires en vue de l'examen 1"
+author: "Thierry Paré"
+output: pdf_document
+---
+
+## Question 1
+Nous avons une annuité qui paie X aux temps 1, 2, 4, et 5 et qui paie 2X aux temps 3 et 6.
+
+* Tracez d'abord le schéma de cette situation
+* Trouvez ensuite la valeur au temps 0 de cette annuité
+
+## Question 2 (pour la compréhension)
+Une annuité qui paie $X$ à chaque début d'année pendant $n$ années. Trouvez la valeur de cette annuité à t = n sans vous servir des formules connues d'annuités. Indice : vous pouvez avoir recours à la formule de la série géométrique. 
+
+## Question 3 (Thomas)
+La fonction de la force d’intérêt $\delta(t)$ s'écrit comme suit :
+
+$$
+\delta(t) = a(1 + t)^{-1}
+$$
+
+Pour accumuler 1\$ à t = 5, il faudrait investir la moitié de cette somme, soit 0,50\$, à t = 2.
+Pour que la valeur future à t = 10 d’une annuité unitaire payée continument entre t = 1 et t = X
+(inconnu) soit égale à 10$, quelle doit-être la durée totale de cette annuité?
+
+## Question 4 (Thomas)
+La fonction de la force d'intérêt $\delta(t)$ s'écrit comme suit : 
+
+$$
+\delta(t) = 2(1+t)^{-1}
+$$
+
+La fonciton dt taux de paiement $h(t)$ s'écrit comme suit :
+
+$$
+h(t) = 10(1+t) 
+$$
+
+Pour accumuler 100$ à t = 5, à partir de quel moment doit-on commencer à investir (on présume
+que les paiements commencent à 0 < t < 5 et se terminent à la fin de la 5ème année)?

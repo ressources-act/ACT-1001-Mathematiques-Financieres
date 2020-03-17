@@ -1,0 +1,54 @@
+---
+title: "Dépannage 1"
+author: "Thierry Paré"
+output:
+  beamer_presentation:
+    theme: "CambridgeUS"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Mot de bienvenue
+
+- Déroulement
+- Mes disponibilités
+- Un petit mot sur les exercices du livre et du dépannage
+
+## Résumé de la matière vue en classe
+
+- Plusieurs manières d’accumuler de l’intérêt :
+    - intérêt simple
+    - intérêt composé (beaucoup plus puissant)
+- Taux de rendement : manière de mesurer le retour sur un investissement
+    - taux de rendement sur n années : produit des (1 + i)
+    - taux de rendement moyen : rendement ^ (1/n)
+        - C’est le taux d’intérêt constant composé annuellement
+- Taux d’intérêt effectif : rendement sans égard au comportement intermédiaire
+de l’investissement au courant de l’année (Exemple : bourse).
+
+## Section 1.2.
+
+La fonction d'accumulation est définie ainsi : 
+$$
+A(t) = A(0) \times a(t)
+$$
+
+## La fonction d'accumulation a(t)
+
+Pour l’intérêt composé, la fonction d’accumulation est la suivante :
+$$
+a(t) = (1 + i)^t
+$$
+Pour l’intérêt simple, la fonction d’accumulation est la suivante :
+$$
+a(t) = 1 + it
+$$
+ 
+## Taux d'intérêt effectif
+Ainsi, on peut conclure que le taux d’intérêt effectif sur la période [t, t + h] est de :
+$$ i = \frac{A(t + h) - A(t)}{A(t)}$$ 
+ 

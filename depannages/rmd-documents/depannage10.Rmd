@@ -1,0 +1,72 @@
+---
+title: "Dépannage 10"
+author: "Thierry Paré"
+output:
+  beamer_presentation:
+    theme: "CambridgeUS"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Chapitre 7
+
+Ce chapitre s'intéresse aux concepts de duration, de convexité, d'appariement et d'immunisation. 
+
+## Duration
+
+### Duration modifiée
+
+Soit $P_y$, le prix de l'obligation.  
+
+$$
+DM = \frac{-\frac{dP_y}{dy}}{P_y} = \frac{\sum_{t = 1}^n tCF_t(1+y)^{-t-1}}{\sum_{t = 1}^n CF_t(1+y)^{-t}}
+$$
+
+### Duration de Macauley
+
+Nous pouvons exprimer la duration de Macauley (notée $D$) comme un fonction de la duration modifiée : 
+$$
+D = (1 + y)DM
+$$
+
+## Convexité 
+
+### Convexité modifiée
+
+La convexité est calculée ainsi : 
+
+$$
+CM = \frac{\frac{d^2P_y}{dy^2}}{P_y} = \frac{\sum_{t = 1}^n t(t+1)CF_t(1+y)^{-t-2}}{\sum_{t = 1}^n CF_t(1+y)^{-t}}
+$$
+
+### Convexité de Macaulay
+
+Il existe aussi un lien entre la convexité de Macaulay (notée $C$) et la convexité modifiée : 
+
+$$
+CM = \frac{C+D}{(1+y)^2}
+$$
+
+## Appariement
+
+Il est possible de se protéger des mouvements des taux d'intérêts avec l'appariement. Nous verrons un exemple plus tard dans les exercices.
+
+## Immunisation de Redington
+
+Une immunisation de Redington respecte les 3 conditions suivantes: 
+
+ * $VA_A(i_0) = VA_L$
+ * $\frac{d}{di} VA_A(i) |_{i=i_0} = \frac{d}{di} VA_L(i) |_{i=i_0}$
+ * $\frac{d^2}{di^2} VA_A(i) |_{i=i_0} > \frac{d^2}{di^2} VA_L(i) |_{i=i_0}$
+ 
+## Immunisation complète
+
+Une immunisation complète respecte les 2 conditions suivantes: 
+
+ * $VA_A(i_0) = VA_L$
+ * $\frac{d}{di} VA_A(i) |_{i=i_0} = \frac{d}{di} VA_L(i) |_{i=i_0}$
+

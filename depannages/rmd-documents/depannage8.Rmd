@@ -1,0 +1,64 @@
+---
+title: "Dépannage 8"
+author: "Thierry Paré"
+output:
+  beamer_presentation:
+    theme: "CambridgeUS"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Chapitre 5
+
+Ce chapitre s'intéresse aux différentes mesures du rendement d'un investissement.
+
+## Le taux de rendement interne
+
+Le taux de rendement interne est le taux d'intérêt pour lequel la valeur des entrées de fonds correspond à la valeur des sorties de fonds. C'est le taux qui résout l'équation de valeur! 
+
+On note $C_j$ les entrées et sorties de fonds au temps $j$. Le $TRI$ est tel que 
+$$
+\sum_{j=1}^n C_j \times (1+TRI)^{-j} = 0
+$$
+
+Le meilleur projet est celui qui nous rapporte le meilleur $TRI$.
+
+## La valeur actualisée nette
+
+La valeur actualisée nette est la valeur actualisée de toutes les entrées et sorties de fonds à un taux $i$ donné. 
+
+On note $C_j$ les entrées et sorties de fonds au temps $j$. 
+$$
+VAN = \sum_{j=1}^n C_j v^j
+$$
+
+Le meilleur projet est celui qui rapporte la meilleure $VAN$
+
+## Rendement à dollar pondéré
+Il existe plusieurs manières d'approximer un taux de rendement. L'une de ces méthodes correspond à l'approximation à dollar pondéré. On définit $v_f$, la valeur finale dans le fonds, $C_i$ la sortie ou l'entrée de fonds au temps $t_i$. 
+
+$$
+I = \frac{v_f - \sum_{i=1}^n C_i}{\sum_{i=1}^n (1 - t_i) \times C_i}
+$$
+
+ATTENTION : Le temps $t_i$ est défini comme une fraction d'année.
+
+## Rendement à temps pondéré
+Une autre méthode est l'approximation à temps pondéré. Cette méthode est très graphique. Je recommande fortement de faire un graphique.
+
+```{r}
+library(ggplot2)
+a <- as.Date(c("2013-12-31", "2014-03-31", "2014-03-31", "2014-06-30", "2014-06-30", 
+               "2014-09-30", "2014-09-30", "2014-12-31", "2014-12-31"))
+b <- c(500000, 525000, 425000, 420000, 470000, 475000, 500000, 485000, 410000)
+l <- data.frame(a,b)
+ggplot(data = l, aes(x = a, y = b)) + 
+    geom_line() + 
+    geom_label(label=b, size = 3) + 
+    labs(x = "Date",
+         y = "Montant")
+```
