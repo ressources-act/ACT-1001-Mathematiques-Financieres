@@ -1,4 +1,4 @@
-# ACT-2005-Mathematiques-Financieres
+# ACT-1001-Mathematiques-Financieres
 Dépannages de mathématiques financières (automne 2019/hiver 2020)
 
 Les solutions des dépannages se trouvent dans le dossier Solutions.
